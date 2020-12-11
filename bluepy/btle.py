@@ -356,6 +356,7 @@ class BluepyHelper:
             try:
                 rv = self._lineq.get(timeout=timeout)
             except Empty:
+                self._stopHelper()
                 DBG("Select timeout")
                 return None
 
